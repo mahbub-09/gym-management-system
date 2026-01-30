@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Subscribe</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .center-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="center-wrapper">
+    <form action="/subscribe" method="post">
+        <h2>Buy Subscription</h2>
+
+        <label for="slotId">Slot</label>
+        <select name="slotId" id="slotId" required>
+            <option value="1">Morning</option>
+            <option value="2">Evening</option>
+        </select>
+
+        <label for="startMonth">Start Month</label>
+        <input type="text" name="startMonth" id="startMonth" required>
+
+        <label for="endMonth">End Month</label>
+        <input type="text" name="endMonth" id="endMonth" required>
+
+        <button type="submit">Subscribe</button>
+    </form>
+</div>
+</body>
+</html>

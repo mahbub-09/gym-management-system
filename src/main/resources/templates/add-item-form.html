@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item Form</title>
+
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        .form-input:focus {
+            border-color: #4CAF50;
+            background-color: #fff;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+<div></div>
+    <h1>Add Item Form</h1>
+
+    <form action="/admin/add-item" method="post">
+
+        <input type="int" id="id" placeholder="sl.no" name="id">
+        <br>
+        <input type="text" id="name" placeholder="name" name="name">
+        <br>
+        <input type="text" id="quantity" placeholder="quantity" name="quantity">
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

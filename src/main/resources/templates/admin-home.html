@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .box-wrapper {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            width: 280px;
+            height: 180px;
+            border-radius: 16px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .box h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<!--<div th:replace="fragments/admin-navbar :: nav"></div>-->
+<div class="container">
+    <h1>Admin Dashboard</h1>
+    <div class="box-wrapper">
+        <div class="box">
+            <h2>Manage Members</h2>
+            <a href="/admin/members">Go to Members</a>
+        </div>
+        <div class="box">
+            <h2>Manage Items</h2>
+            <a href="/admin/items">Go to Items</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

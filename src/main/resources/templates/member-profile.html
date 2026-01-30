@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-danger {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="profile-container">
+    <h2>Welcome, <span th:text="${member.name}"></span></h2>
+    <p>Email: <span th:text="${member.email}"></span></p>
+
+    <h3>Your Subscription:</h3>
+    <!--<p>Slot ID: <span th:text="${subscription.slotId}"></span></p>-->
+    <!--<p>Start Month: <span th:text="${subscription.startMonth}"></span></p>-->
+    <!--<p>End Month: <span th:text="${subscription.endMonth}"></span></p>-->
+
+    <div th:if="${subscription != null}">
+        <p><strong>Subscription Slot:</strong> <span th:text="${subscription.slotId}"></span></p>
+        <p><strong>From:</strong> <span th:text="${subscription.startMonth}"></span></p>
+        <p><strong>To:</strong> <span th:text="${subscription.endMonth}"></span></p>
+
+        <a href="/subscribe">Update Subscription</a>
+
+    </div>
+
+    <div th:if="${subscription == null}">
+        <p>You have no subscription yet. <a th:href="@{/subscribe}">Subscribe Now</a></p>
+    </div>
+    <div>
+        <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="hidden"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Update item form</h1>
+<!--    <form action="/admin/update-item" method="post">-->
+
+<!--        <input type="number" id="id" placeholder="id" name="id">-->
+<!--        <br>-->
+<!--        <input type="text" id="name" placeholder="name" name="name">-->
+<!--        <br>-->
+<!--        <input type="text" id="quantity" placeholder="quantity" name="quantity">-->
+<!--        <br>-->
+<!--        <button>Submit</button>-->
+<!--    </form>-->
+
+    <form action="/admin/update-item" method="post" th:object="${item}">
+
+        <input type="hidden" th:field="*{id}" placeholder="id" />
+        <br>
+        <input type="hidden" th:field="*{name}" placeholder="name" />
+        <br>
+        <input type="text" th:field="*{quantity}" placeholder="quantity" />
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

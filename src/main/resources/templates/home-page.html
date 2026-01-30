@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.main-header i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+        .split-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left, .right {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left {
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .right {
+            background-color: #ffffff;
+            color: #333;
+            border-left: 1px solid #ccc;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 400px;
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .actions {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-register {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-register:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #007BFF; color: white; font-size: 18px;">
+    <!-- Left Side: Logo and Name with Icon -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-dumbbell" style="font-size: 20px;"></i>
+        <h2 style="margin: 0; font-size: 20px;">PulseFit Gym</h2>
+    </div>
+
+    <!-- Right Side: Admin Login Button -->
+    <div>
+        <a href="/admin" style="background-color: white; color: #007BFF; padding: 6px 12px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
+            Admin Login
+        </a>
+    </div>
+</header>
+
+
+
+<div class="split-container">
+    <!-- Left side: Login Info -->
+    <div class="left">
+        <h1>Member Login</h1>
+        <p>Access your profile, view your subscriptions, and manage your gym activities.</p>
+        <div class="actions">
+            <a th:href="@{/login}" class="btn btn-login">Login</a>
+        </div>
+    </div>
+
+    <!-- Right side: Registration Info -->
+    <div class="right">
+        <h1>New Here?</h1>
+        <p>Join our gym today and start your fitness journey with expert trainers and great facilities.</p>
+        <div class="actions">
+            <a th:href="@{/register}" class="btn btn-register">Register</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
