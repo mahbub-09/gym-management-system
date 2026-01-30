@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- templates/fragments/admin-navbar.html -->
+<nav style="background-color: #007BFF; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; gap: 20px;">
+        <a href="/admin/home" style="color: white; text-decoration: none; font-weight: bold;">Dashboard</a>
+        <a href="/admin/members" style="color: white; text-decoration: none; font-weight: bold;">Manage Members</a>
+        <a href="/admin/items" style="color: white; text-decoration: none; font-weight: bold;">Manage Items</a>
+    </div>
+    <form th:action="@{/admin/logout}" method="post">
+        <button type="submit" style="background-color: white; color: #007BFF; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">Logout</button>
+    </form>
+</nav>
+
+</body>
+</html>
